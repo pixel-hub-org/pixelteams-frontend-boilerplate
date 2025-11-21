@@ -38,4 +38,3 @@ All commands are run from the root of the project, from a terminal:
 
 - Documentação Astro: https://docs.astro.build
 - Mini guia Astro: [ASTRO_MINI_GUIDE.md](ASTRO_MINI_GUIDE.md)
-# pixelteams-frontend-boilerplate
