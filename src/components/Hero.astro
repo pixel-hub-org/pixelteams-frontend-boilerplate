@@ -1,4 +1,6 @@
 ---
+import Counter from "./Counter.astro";
+
 export interface Props {
   title?: string;
   subtitle?: string;
@@ -14,5 +16,7 @@ export let subtitle: string = "";
     <div class="mt-8">
       <slot name="cta" />
     </div>
+    <!-- exemple usage: -->
+    <Counter slot="counter" />
   </div>
 </section>

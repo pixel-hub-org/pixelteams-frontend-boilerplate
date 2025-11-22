@@ -1,0 +1,55 @@
+---
+
+---
+
+<div id="counter" class="flex items-center gap-4" slot="counter">
+  <button
+    id="decrement"
+    class="bg-black text-white size-10 rounded-full font-bold text-lg hover:bg-secondary transition flex items-center justify-center cursor-pointer disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed"
+    disabled>-</button
+  >
+  <span id="count" class="text-xl font-mono px-4">0</span>
+  <button
+    id="increment"
+    class="bg-black rounded-full text-white size-10 font-bold text-lg hover:bg-secondary transition cursor-pointer"
+    >+</button
+  >
+</div>
+
+<script>
+  const countEl = document.getElementById("count");
+  const incrementBtn = document.getElementById(
+    "increment"
+  ) as HTMLButtonElement | null;
+  const decrementBtn = document.getElementById(
+    "decrement"
+  ) as HTMLButtonElement | null;
+  let count = 0;
+
+  function updateDecrementState() {
+    if (!decrementBtn) return;
+    if (count <= 0) {
+      decrementBtn.disabled = true;
+    } else {
+      decrementBtn.disabled = false;
+    }
+  }
+
+  if (incrementBtn && countEl && decrementBtn) {
+    incrementBtn.onclick = () => {
+      count++;
+      countEl.textContent = count.toString();
+      updateDecrementState();
+    };
+
+    decrementBtn.onclick = () => {
+      if (count > 0) {
+        count--;
+        countEl.textContent = count.toString();
+        updateDecrementState();
+      }
+    };
+
+    updateDecrementState();
+  }
+</script>
